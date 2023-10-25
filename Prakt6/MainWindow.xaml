@@ -1,0 +1,65 @@
+﻿<Window x:Class="Prakt6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prakt6"
+        mc:Ignorable="d"
+        Title="Практическая работа №6" Height="450" Width="800" ResizeMode="CanMinimize" Icon="/FLGRUS.ICO">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Menu VerticalAlignment="Top" Grid.ColumnSpan="5">
+            <MenuItem Header="Файл">
+                <MenuItem Header="Выход" Click="btnExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Команды">
+                <MenuItem Header="Сохранить изменения">
+                    <MenuItem Header="в паре 1" Click="btnSavePair1_Click"/>
+                    <MenuItem Header="в паре 2" Click="btnSavePair2_Click"/>
+                    <MenuItem Header="в обеих парах" Click="btnSavePairs_Click"/>
+                </MenuItem>
+                <MenuItem Header="Сравнить пары" Click="btnCompare_Click"/>
+            </MenuItem>
+            <MenuItem Header="О программе" Click="btnInfo_Click"/>
+        </Menu>
+        <Label Content="Пара 1, 1-е число" Grid.Row="1" Grid.Column="1" Margin="30,10" FontSize="14"/>
+        <TextBox x:Name="tbPair1First" Text="0" Grid.Row="1" Grid.Column="1" Margin="30,35" FontSize="14" VerticalContentAlignment="Center"/>
+        <Label Content="Пара 1, 2-е число" Grid.Row="1" Grid.Column="2" Margin="30,10" FontSize="14"/>
+        <TextBox x:Name="tbPair1Second" Text="0" Grid.Row="1" Grid.Column="2" Margin="30,35" FontSize="14" VerticalContentAlignment="Center"/>
+        <Button Grid.Row="1" Grid.Column="3" Margin="25" FontSize="13" Click="btnSavePair1_Click">
+            <Button.Content>
+                <TextBlock Text="Сохранить изменения в паре 1" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Button.Content>
+        </Button>
+        <Label Content="Пара 2, 1-е число" Grid.Row="2" Grid.Column="1" Margin="30,10" FontSize="14"/>
+        <TextBox x:Name="tbPair2First" Text="0" Grid.Row="2" Grid.Column="1" Margin="30,35" FontSize="14" VerticalContentAlignment="Center"/>
+        <Label Content="Пара 2, 2-е число" Grid.Row="2" Grid.Column="2" Margin="30,10" FontSize="14"/>
+        <TextBox x:Name="tbPair2Second" Text="0" Grid.Row="2" Grid.Column="2" Margin="30,35" FontSize="14" VerticalContentAlignment="Center"/>
+        <Button Grid.Row="2" Grid.Column="3" Margin="25" FontSize="13" Click="btnSavePair2_Click">
+            <Button.Content>
+                <TextBlock Text="Сохранить изменения в паре 2" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Button.Content>
+        </Button>
+        <Button Content="Сравнить пары" Grid.Row="3" Grid.Column="1" Margin="30,35" FontSize="14" Click="btnCompare_Click"/>
+        <Label Content="Результат сравнения" Grid.Row="3" Grid.Column="2" Margin="30,11" FontSize="13"/>
+        <TextBox x:Name="tbResult" Grid.Row="3" Grid.Column="2" Margin="30,35" VerticalContentAlignment="Center" IsReadOnly="True" FontSize="14"/>
+        <Button Grid.Row="3" Grid.Column="3" Margin="25" FontSize="13" Click="btnSavePairs_Click">
+            <Button.Content>
+                <TextBlock Text="Сохранить изменения в обеих парах" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Button.Content>
+        </Button>
+    </Grid>
+</Window>
